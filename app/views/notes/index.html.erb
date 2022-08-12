@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<style>
+  .note{
+    display:flex;
+    justify-content:space-between;
+  }
+</style>
+<h1>To-Do List</h1><br>
+<div id="notes" class="list-group ">
+  <% @notes.each do |note|%>
+      <div class="note list-group-item">
+        <%= render note %>
+        <%= link_to "Show", note, class:"btn btn-info"%>
+      </div>
+  <% end %>
+</div><br>
+<%=link_to "New note", new_note_path, class:"btn btn-secondary"%>
+
+
+
+
+
